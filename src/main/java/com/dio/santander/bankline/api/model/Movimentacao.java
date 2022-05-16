@@ -4,14 +4,16 @@ import java.time.LocalDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Entity
 //classe corretista será uma entidade 
+@Entity
+
 @Table(name="tab_movimentacao")
 //os registros dessa classe serão salvos numa tabela de nome tab_correntista
 public class Movimentacao {
@@ -22,11 +24,13 @@ public class Movimentacao {
 	private Integer id;
     @Column(name = "data_hora")
 	private LocalDateTime dataHora;
-	private String descrição;
+	private String descricao;
 	private Double valor;
 	//vamos salvar o próprio valor literal
-	@Enumerated
+	@Enumerated(EnumType.STRING)
 	private MovimentacaoTipo tipo;
+	@Column(name = "id_conta")
+	private Integer idConta;
 	public Integer getId() {
 		return id;
 	}
@@ -39,11 +43,17 @@ public class Movimentacao {
 	public void setDataHora(LocalDateTime dataHora) {
 		this.dataHora = dataHora;
 	}
-	public String getDescrição() {
-		return descrição;
+	public String getDescricao() {
+		return descricao;
 	}
-	public void setDescrição(String descrição) {
-		this.descrição = descrição;
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+	public Integer getIdConta() {
+		return idConta;
+	}
+	public void setIdConta(Integer idConta) {
+		this.idConta = idConta;
 	}
 	public Double getValor() {
 		return valor;

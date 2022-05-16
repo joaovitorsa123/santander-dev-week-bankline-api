@@ -19,9 +19,9 @@ public class Correntista {
 	private Integer id;
 	//permite criar as colunas da tabela atraves desse mapeamento
 	@Column(length = 14)
-	private Integer cpf;
+	private String cpf;
 	@Column(length = 60)
-	private Integer nome;
+	private String nome;
 	
 	//as informações que estiverem nesta classe, estiverem nessa classe, estarão na mesma tabela
 	//que a tabela principal, a tabela que possui uma referencia a esta classe.
@@ -41,16 +41,16 @@ public class Correntista {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	public Integer getCpf() {
+	public String getCpf() {
 		return cpf;
 	}
-	public void setCpf(Integer cpf) {
+	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
-	public Integer getNome() {
+	public String getNome() {
 		return nome;
 	}
-	public void setNome(Integer nome) {
+	public void setNome(String nome) {
 		this.nome = nome;
 	}
 }
